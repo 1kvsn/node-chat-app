@@ -8,6 +8,6 @@ var app = express();
 // serve public folder using express.static middleware
 app.use(express.static(publicPath));
 
-app.listen(3000, () => {
+app.listen(port, () => {
 	console.log(`Server is up on port ${port}`);
 })
