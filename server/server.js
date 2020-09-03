@@ -17,15 +17,14 @@ app.use(express.static(publicPath));
 io.on('connection', (socket) => {
 	console.log('New user connected');
 
-	socket.emit('newMessage', {
-		from: 'mike@example.com',
-		text: 'Hey, what is going on.',
-		createdAt: Date.now(),
-	});
-
 	// received data becomes input to the callback function
 	socket.on('createMessage', (message) => {
 		console.log('createMessage', message);
+
+		io.emit('newMessage', {
+			...message,
+			createdAt: new Date().getTime(),
+		})
 	})
 
 	socket.on('disconnect', () => {
