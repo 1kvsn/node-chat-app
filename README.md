@@ -1,6 +1,10 @@
 A Real Time Chat App using Node.js and Socket.io
 
+// upcoming features
 
+ - make chatrooms case-insensitive
+ - make usernames unique. Two people with same name will be rejected
+ - add a list of currently active chat rooms in the join page with dropdown above join button.
 
 Notes:
 - socket.emit() emits an event to a single connection whereas io.emit() emits an event to every single connection.
