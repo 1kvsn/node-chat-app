@@ -18,13 +18,33 @@ function scrollToBottom() {
 };
 
 socket.on('connect', function() {
-	console.log('connected to server');
+	let params = jQuery.deparam(window.location.search);
 
+	socket.emit('join', params, function (err) {
+		if (err) {
+			alert(err);
+			window.location.href = '/';
+		} else {
+			console.log('No error');
+		}
+	}); 
 })
 
 socket.on('disconnect', function() {
 	console.log('Disconnected from server');
 })
+
+socket.on('updateUserList', function (users) {
+	let ol = jQuery('<ol></ol>');
+
+	users.forEach(function (user) {
+		ol.append(jQuery('<li></li>').text(user));
+	});
+
+	// .html method wipes the old one and inserts new one.
+	// .append method updates the element
+	jQuery('#users').html(ol);
+});
 
 // the listener name 'newMessage' should match the one emitted in the server.
 // received data becomes input to the callback function
