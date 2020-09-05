@@ -1,9 +1,13 @@
 A Real Time Chat App using Node.js and Socket.io
 
-// upcoming features
+* Features:
+- Create your own chat room. Room name is case-insensitive.
+- Upon entering your chatroom, Admin greets you and notifies everyone in the room of your arrival.
+- It shows the names of all the people currently present in the room.
+- You can send your location using Send Location button. If your browser supports it, it will ask for your permission before your location is sent. Otherwise, an error is shown.
+- When a user leaves the room, everyone gets notified in the room.
 
- - make chatrooms case-insensitive
- - make usernames unique. Two people with same name will be rejected
+// upcoming
  - add a list of currently active chat rooms in the join page with dropdown above join button.
 
 Notes:

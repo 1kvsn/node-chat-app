@@ -34,6 +34,7 @@ socket.on('disconnect', function() {
 	console.log('Disconnected from server');
 })
 
+// upon disconnection, remove the user and update the userList
 socket.on('updateUserList', function (users) {
 	let ol = jQuery('<ol></ol>');
 
@@ -76,18 +77,22 @@ socket.on('newLocationMessage', function (message) {
 	scrollToBottom();
 });
 
+// Message Form
 jQuery('#message-form').on('submit', function (e) {
+	// prevents page refresh on form submit
 	e.preventDefault();
 
 	let messageTextbox = jQuery('[name=message]');
-
+ 
 	socket.emit('createMessage', {
 		text: messageTextbox.val()
 	}, function () {
+		// clears text box upon message send
 		messageTextbox.val('');
 	});
 });
 
+// Location Fetching and Sending
 let locationButton = jQuery('#send-location');
 locationButton.on('click', function() {
 	if (!navigator.geolocation) {

@@ -8,6 +8,11 @@
 	</head>
 
 	<body class="centered-form">
+		<header>
+			<h1>
+				<span data-z data-z-layers="3" data-z-depth="0.5em">Secure Chat</span>
+			</h1>
+		</header>
 		<div class="centered-form__form">
 			<form action="/chat.html">
 				<div class="form-field">
@@ -21,10 +26,18 @@
 					<label>Room Name</label>
 					<input type="text" name="room" />
 				</div>
+				<!-- <div class="form-field">
+					<label>Active Rooms</label>
+					<select>
+						<option>one</option>
+					</select>
+				</div> -->
 				<div class="form-field">
 					<button>Join</button>
 				</div>
 			</form>
 		</div>
+		<!-- <script src="/js/libs/ztext.min.js"></script> -->
+		<script src="https://bennettfeely.com/ztext/js/ztext.min.js"></script>
 	</body>
 </html>
