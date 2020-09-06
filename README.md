@@ -9,6 +9,10 @@ A Real Time Chat App using Node.js and Socket.io
 
 // upcoming
  - add a list of currently active chat rooms in the join page with dropdown above join button.
+ - show the room name within a room
+ - leave room button
+ - add incoming message sound
+ - allow making a secret room ( should not showup in room dropdown)
 
 Notes:
 - socket.emit() emits an event to a single connection whereas io.emit() emits an event to every single connection.

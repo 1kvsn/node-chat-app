@@ -18,9 +18,13 @@ const users = new Users();
 // serve public folder using express.static middleware
 app.use(express.static(publicPath));
 
+let existingChatRooms = [];
+
+
 // io listeners used only for connection
 io.on('connection', (socket) => {
 	console.log('New user connected');
+
 
 
 	socket.on('join', (params, callback) => {
@@ -43,6 +47,8 @@ io.on('connection', (socket) => {
 		// add user to the new room
 		users.addUser(socket.id, params.name, room);
 
+		existingChatRooms = users.getRooms();
+
 		// let everyone in the room know
 		io.to(room).emit('updateUserList', users.getUserList(room));
 
@@ -53,6 +59,7 @@ io.on('connection', (socket) => {
 		callback();
 	});
 
+	
 
 	// received data becomes input to the callback function
 	socket.on('createMessage', (message, callback) => {

@@ -1,4 +1,4 @@
-
+// This class maintains app state and state update methods.
 
 class Users {
 	constructor() {
@@ -30,6 +30,11 @@ class Users {
 		let namesArray = users.map(user => user.name);
 
 		return namesArray;
+	}
+
+	getRooms () {
+		console.log(this.users.map(user => user.room), 'this is all rooms')
+		return this.users.map(user => user.room);
 	}
 }
 
