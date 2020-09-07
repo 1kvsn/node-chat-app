@@ -14,5 +14,11 @@ A Real Time Chat App using Node.js and Socket.io
  - leave room button
  - add incoming message sound
  - allow making a secret room ( should not showup in room dropdown)
- - send --help as a message to get help menu
+
+ - If the same user is sending consecutive messages, skip the user name in the message.
+ - The users messages should show on the left and rest on the right.
+ 
+ -  Commands:
+  - send --help as a message to get help menu
  - create help menu and give options ( figure out options )
+ - change background image using text commands

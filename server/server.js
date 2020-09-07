@@ -52,7 +52,7 @@ io.on('connection', (socket) => {
 		// let everyone in the room know
 		io.to(room).emit('updateUserList', users.getUserList(room));
 
-		socket.emit('newMessage', generateMessage('Admin', 'Welcome to the chat app'));
+		socket.emit('newMessage', generateMessage('Admin', 'Welcome to Secure Chat.'));
 
 	socket.broadcast.to(room).emit('newMessage', generateMessage('Admin', `${params.name} has joined.`));
 
@@ -64,6 +64,10 @@ io.on('connection', (socket) => {
 	// received data becomes input to the callback function
 	socket.on('createMessage', (message, callback) => {
 		let user = users.getUser(socket.id);
+
+		if (user && message.text === '--help') {
+			return console.log('execute help')
+		}
 
 		if (user && isRealString(message.text)) {
 			io.to(user.room).emit('newMessage', generateMessage(user.name, message.text));
