@@ -8,16 +8,13 @@
 }
 
 /* Join Page Header Styles */
-h1 {
+.join-header span {
   color: #fff;
+  font-size: 40px;
 }
 
 .z-text {
   transform: rotateX(30deg) rotateY(0deg);
-}
-
-.z-layer {
-  font-size: 40px;
 }
 
 .z-layer:not(:first-child) {
@@ -38,7 +35,7 @@ h3 {
 
 button {
   border: none;
-  background: #265f82;
+  background: #6f4b54;
   color: white;
   cursor: pointer;
   padding: 10px;
@@ -47,14 +44,14 @@ button {
 
 button:hover {
   border: none;
-  background: #1F4C69;
+  background: #835b65;
   color: white;
   padding: 10px;
 }
 
 button:disabled {
   cursor: default;
-  background: #698ea5;
+  background: #a06977;
 }
 
 .centered-form {
@@ -115,6 +112,22 @@ button:disabled {
   background: linear-gradient(325deg, linear-gradient(325deg, rgb(0, 0, 0) 0%, rgba(43, 18, 18, 0.78) 100%)); /* w3c */
 }
 
+.chat__sidebar__header {
+  text-align: center;
+  margin-top: 10px;
+}
+
+hr {
+  width: 50%;
+  margin: 25px auto 30px auto;
+  background-color: #fff;
+}
+
+.chat__sidebar__header span {
+  color: #fff;
+  font-size: 25px;
+}
+
 .chat__sidebar h3 {
   color: #e6eaee;
   margin: 10px 20px;
@@ -138,6 +151,12 @@ button:disabled {
   flex-direction: column;
   height: 100vh;
   width: 100%;
+}
+
+.chat__room {
+  display: flex;
+  padding: 10px;
+  text-align: center;
 }
 
 .chat__messages {
@@ -172,7 +191,7 @@ button:disabled {
 /* message styles */
 
 .chat__messages {
-  background: url(/../assets/images/light-blue.jpg) #fff;
+  background: url(/../assets/images/pinkish.jpg) #ffe0e0;
   background-size: cover;
   background-repeat: no-repeat;
   list-style-type: none;
@@ -199,6 +218,7 @@ button:disabled {
   border-bottom-left-radius: 5px;
   padding: 10px;
   margin: 10px 0 10px 10px;
+  box-shadow: 0px 0px 10px 0px rgba(166, 161, 158, 0.52);
 }
 
 .message__title {

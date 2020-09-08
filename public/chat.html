@@ -4,10 +4,18 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<link rel="stylesheet" href="/css/style.css">
-		<title>Chat | ChatApp</title>
+		<title>Chat | Secure Chat</title>
 	</head>
 	<body class="chat">
 		<div class="chat__sidebar">
+			<a href="/" >
+				<h1 class="chat__sidebar__header">
+					<span data-z data-z-event="pointer" data-z-eventRotation="20deg">Secure Chat</span>
+				</h1>
+			</a>
+
+			<hr>
+
 			<h3>People</h3>
 			<div id="users"></div>
 		</div>
@@ -43,6 +51,9 @@
 
 		<script id="location-message-template" type="text/template">
 			<li class="message">
+				<span class="message-tail">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 13" width="8" height="13"><path opacity=".13" fill="#0000000" d="M1.533 3.568L8 12.193V1H2.812C1.042 1 .474 2.156 1.533 3.568z"></path><path fill="currentColor" d="M1.533 2.568L8 11.193V0H2.812C1.042 0 .474 1.156 1.533 2.568z"></path></svg>
+				</span>
 				<div class="message__title">
 					<h4>{{from}}</h4>
 					<span>{{createdAt}}</span>
@@ -61,5 +72,6 @@
 		<script src="/js/libs/mustache.js"></script>
 		<script src="/js/libs/deparam.js"></script>
 		<script src="/js/chat.js"></script>
+		<script src="/js/libs/ztext.min.js"></script>
 	</body>
 </html>

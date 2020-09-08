@@ -47,7 +47,7 @@ io.on('connection', (socket) => {
 		// add user to the new room
 		users.addUser(socket.id, params.name, room);
 
-		existingChatRooms = users.getRooms();
+		// existingChatRooms = users.getRooms();
 
 		// let everyone in the room know
 		io.to(room).emit('updateUserList', users.getUserList(room));
