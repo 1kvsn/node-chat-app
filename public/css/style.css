@@ -201,7 +201,7 @@ hr {
 .message-tail {
   position: absolute;
   color: #fff;
-  top: 0;
+  top: 0px;
   left: -8px;
   display: block;
   width: 8px;
@@ -213,6 +213,7 @@ hr {
   max-width: 65%;
   background: #fff;
   color: #000;
+  border-top-left-radius: 2px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
